@@ -31,35 +31,37 @@
 </head>
 <body>
   <div id="vfas">
-    <div class="titlebar" :class="title_class">
-      <h1>Videos for a Stadium</h1>
-    </div>
+    <div id="vfas-scroll">
+      <div class="titlebar" :class="title_class">
+        <h1>Videos for a Stadium</h1>
+      </div>
 
-    <div class="nav-container" :class="nav_class">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
+      <div class="nav-container" :class="nav_class">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
 
-            <!-- TODO: Rework (delete?) hamburger menu -->
+              <!-- TODO: Rework (delete?) hamburger menu -->
 
-            <!-- hamburger menu -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-hamburger-collapse-content" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+              <!-- hamburger menu -->
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-hamburger-collapse-content" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="nav-hamburger-collapse-content">
+              <ul class="nav navbar-nav">
+                <li><a href="#about">About</a></li>
+                <li><a href="#artists">Artists</a></li>
+                <li><a href="#location">Location</a></li>
+              </ul>
+            </div>
           </div>
-
-          <div class="collapse navbar-collapse" id="nav-hamburger-collapse-content">
-            <ul class="nav navbar-nav">
-              <li><a href="#about">About</a></li>
-              <li><a href="#artists">Artists</a></li>
-              <li><a href="#location">Location</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </div>
 
     <!-- content below the navbar -->
@@ -139,11 +141,9 @@
 
 <script>
 
-new Vue({
-  el: '#vfas',
+var vm_artists = new Vue({
+  el: '#artists',
   data: {
-
-    scroll_position: 0,
 
     artists:  [ { name: 'Paul S. Benjamin', url: 'http://www.paulsbenjamin.com/', photo: 'images/artists/PaulSBenjamin.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
                 { name: 'Janet Biggs', url: 'http://jbiggs.com/', photo: 'images/artists/JanetBiggs.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
@@ -157,8 +157,14 @@ new Vue({
                 { name: 'Joe Sola', url: 'http://www.joesola.info/', photo: 'images/artists/JoeSola.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
                 { name: 'Scott Stark', url: 'http://www.scottstark.com/', photo: 'images/artists/ScottStark.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'}
               ]
-  },
+  }
+});
 
+var vm_scroll = new Vue({
+  el:'#vfas-scroll',
+  data: {
+    scroll_position: 0
+  },
   methods: {
     onScroll() {
       this.scroll_position = window.scrollY;
@@ -191,8 +197,6 @@ new Vue({
   destroy() {
     window.removeEventListener('scroll', this.onScroll);
   }
-
-
 });
 
 </script>
