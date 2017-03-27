@@ -17,8 +17,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+  <!-- Get Vue.js -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
   <!-- include fonts -->
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <!-- TODO: add more fonts -->
 
   <!-- include style -->
   <link href='style/style.css' rel='stylesheet' type='text/css'>
@@ -33,8 +37,11 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-        <!-- hamburger menu -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse-content" aria-expanded="false">
+
+          <!-- TODO: Rework (delete?) hamburger menu -->
+
+          <!-- hamburger menu -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-hamburger-collapse-content" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -42,7 +49,7 @@
           </button>
         </div>
 
-        <div class="collapse navbar-collapse" id="nav-collapse-content">
+        <div class="collapse navbar-collapse" id="nav-hamburger-collapse-content">
           <ul class="nav navbar-nav">
             <li><a href="#about">About</a></li>
             <li><a href="#artists">Artists</a></li>
@@ -53,58 +60,63 @@
       </div>
     </nav>
 
-
+    <!-- content below the navbar -->
     <div class="page-body">
-      <div class="page-header" id="about">
-        <h1>About</h1>
-      </div>
-      <div class="row about">
-        <div class="col-sm-4">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam. Phasellus nec ligula facilisis, dictum ex sit amet, auctor leo. Duis nibh ex, mollis nec odio vel, ornare cursus ipsum. Etiam malesuada accumsan dolor in tincidunt. Aliquam ac est vehicula, pulvinar mi pellentesque, consectetur nisl. Curabitur nisl erat, varius at vehicula eget, eleifend quis dui.</p>
+      <div id="about">
+        <div class="page-header">
+          <h1>About</h1>
         </div>
-        <div class="col-sm-4">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam. Phasellus nec ligula facilisis, dictum ex sit amet, auctor leo. Duis nibh ex, mollis nec odio vel, ornare cursus ipsum. Etiam malesuada accumsan dolor in tincidunt. Aliquam ac est vehicula, pulvinar mi pellentesque, consectetur nisl. Curabitur nisl erat, varius at vehicula eget, eleifend quis dui.</p>
-        </div>
-        <div class="col-sm-4">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam. Phasellus nec ligula facilisis, dictum ex sit amet, auctor leo. Duis nibh ex, mollis nec odio vel, ornare cursus ipsum. Etiam malesuada accumsan dolor in tincidunt. Aliquam ac est vehicula, pulvinar mi pellentesque, consectetur nisl. Curabitur nisl erat, varius at vehicula eget, eleifend quis dui.</p>
-        </div>
-      </div>
-      <div class="page-header" id="artists">
-        <h1>Artists</h1>
-      </div>
-      <div class="row artists">
-        <div class="row">
-          <div class="col-xs-6 col-sm-4 col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/100x100" alt="..."></a></div>
-          <div class="col-xs-6 col-sm-4 col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/100x100" alt="..."></a></div>
-          <div class="col-xs-6 col-sm-4 col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/100x100" alt="..."></a></div>
-          <div class="col-xs-6 col-sm-4 col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/100x100" alt="..."></a></div>
-          <div class="col-xs-6 col-sm-4 col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/100x100" alt="..."></a></div>
-          <div class="col-xs-6 col-sm-4 col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/100x100" alt="..."></a></div>
-          <div class="col-xs-6 col-sm-4 col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/100x100" alt="..."></a></div>
-          <div class="col-xs-6 col-sm-4 col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/100x100" alt="..."></a></div>
-          <div class="col-xs-6 col-sm-4 col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/100x100" alt="..."></a></div>
-          <div class="col-xs-6 col-sm-4 col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/100x100" alt="..."></a></div>
-          <div class="col-xs-6 col-sm-4 col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/100x100" alt="..."></a></div>
-          <div class="col-xs-6 col-sm-4 col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/100x100" alt="..."></a></div>
+        <div class="row about">
+          <div class="col-sm-4">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam. Phasellus nec ligula facilisis, dictum ex sit amet, auctor leo. Duis nibh ex, mollis nec odio vel, ornare cursus ipsum. Etiam malesuada accumsan dolor in tincidunt. Aliquam ac est vehicula, pulvinar mi pellentesque, consectetur nisl. Curabitur nisl erat, varius at vehicula eget, eleifend quis dui.</p>
+          </div>
+          <div class="col-sm-4">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam. Phasellus nec ligula facilisis, dictum ex sit amet, auctor leo. Duis nibh ex, mollis nec odio vel, ornare cursus ipsum. Etiam malesuada accumsan dolor in tincidunt. Aliquam ac est vehicula, pulvinar mi pellentesque, consectetur nisl. Curabitur nisl erat, varius at vehicula eget, eleifend quis dui.</p>
+          </div>
+          <div class="col-sm-4">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam. Phasellus nec ligula facilisis, dictum ex sit amet, auctor leo. Duis nibh ex, mollis nec odio vel, ornare cursus ipsum. Etiam malesuada accumsan dolor in tincidunt. Aliquam ac est vehicula, pulvinar mi pellentesque, consectetur nisl. Curabitur nisl erat, varius at vehicula eget, eleifend quis dui.</p>
+          </div>
         </div>
       </div>
-      <div class="page-header" id="location">
-        <h1>Location</h1>
-      </div>
-      <div class="row location">
-        <div class="col-sm-6">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam. Phasellus nec ligula facilisis, dictum ex sit amet, auctor leo. Duis nibh ex, mollis nec odio vel, ornare cursus ipsum. Etiam malesuada accumsan dolor in tincidunt. Aliquam ac est vehicula, pulvinar mi pellentesque, consectetur nisl. Curabitur nisl erat, varius at vehicula eget, eleifend quis dui.</p>
+
+      <div id="artists">
+        <div class="page-header">
+          <h1>Artists</h1>
         </div>
-        <div class="col-sm-6">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam. Phasellus nec ligula facilisis, dictum ex sit amet, auctor leo. Duis nibh ex, mollis nec odio vel, ornare cursus ipsum. Etiam malesuada accumsan dolor in tincidunt. Aliquam ac est vehicula, pulvinar mi pellentesque, consectetur nisl. Curabitur nisl erat, varius at vehicula eget, eleifend quis dui.</p>
+        <div class="row artists">
+          <div class="row">
+            <!-- If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line. -->
+            <div v-for="artist in artists" class="col-xs-6 col-sm-4 col-md-3">
+              <h4 class="artist-name">{{ artist.name }}</h4>
+              <a v-bind:href="artist.url" class="thumbnail"><img v-bind:src="artist.photo" alt="..."></a>
+              <p>{{ artist.bio }}</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="page-header" id="tickets">
-        <h1>Tickets</h1>
+
+      <div id="location">
+        <div class="page-header">
+          <h1>Location</h1>
+        </div>
+        <div class="row location">
+          <div class="col-sm-6">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam. Phasellus nec ligula facilisis, dictum ex sit amet, auctor leo. Duis nibh ex, mollis nec odio vel, ornare cursus ipsum. Etiam malesuada accumsan dolor in tincidunt. Aliquam ac est vehicula, pulvinar mi pellentesque, consectetur nisl. Curabitur nisl erat, varius at vehicula eget, eleifend quis dui.</p>
+          </div>
+          <div class="col-sm-6">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam. Phasellus nec ligula facilisis, dictum ex sit amet, auctor leo. Duis nibh ex, mollis nec odio vel, ornare cursus ipsum. Etiam malesuada accumsan dolor in tincidunt. Aliquam ac est vehicula, pulvinar mi pellentesque, consectetur nisl. Curabitur nisl erat, varius at vehicula eget, eleifend quis dui.</p>
+          </div>
+        </div>
       </div>
-      <div class="row tickets">
-        <div class="col-sm-12">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam. Phasellus nec ligula facilisis, dictum ex sit amet, auctor leo. Duis nibh ex, mollis nec odio vel, ornare cursus ipsum. Etiam malesuada accumsan dolor in tincidunt. Aliquam ac est vehicula, pulvinar mi pellentesque, consectetur nisl. Curabitur nisl erat, varius at vehicula eget, eleifend quis dui.</p>
+
+      <div id="tickets">
+        <div class="page-header">
+          <h1>Tickets</h1>
+        </div>
+        <div class="row tickets">
+          <div class="col-sm-12">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam. Phasellus nec ligula facilisis, dictum ex sit amet, auctor leo. Duis nibh ex, mollis nec odio vel, ornare cursus ipsum. Etiam malesuada accumsan dolor in tincidunt. Aliquam ac est vehicula, pulvinar mi pellentesque, consectetur nisl. Curabitur nisl erat, varius at vehicula eget, eleifend quis dui.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -112,3 +124,33 @@
 
 </body>
 </html>
+
+<script>
+
+new Vue({
+  el: '#artists',
+  data: {
+
+    artists:  [ { name: 'Paul S. Benjamin', url: 'http://www.paulsbenjamin.com/', photo: 'images/artists/PaulSBenjamin.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
+                { name: 'Janet Biggs', url: 'http://jbiggs.com/', photo: 'images/artists/JanetBiggs.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
+                { name: 'Victoria Fu', url: 'http://www.victoriafu.com/', photo: 'images/artists/VictoriaFu.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
+                { name: 'Brett Kashmere', url: 'http://www.brettkashmere.com/', photo: 'images/artists/BrettKashmere.png', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
+                { name: 'Anya Liftig', url: 'http://www.anyaliftig.com/', photo: 'images/artists/AnyaLiftig.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
+                { name: 'Lilly McElroy', url: 'http://lillymcelroy.com/home.html', photo: 'images/artists/LillyMcElroy.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
+                { name: 'Didier Morelli', url: 'http://www.didiermorelli.com/', photo: 'images/artists/DidierMorelli.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
+                { name: 'Michael Murphy', url: 'http://michaeldavidmurphy.com/', photo: 'images/artists/MichaelDavidMurphy.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
+                { name: 'Alix Pearlstein', url: 'http://www.alixpearlstein.com/', photo: 'images/artists/AlixPearlstein.png', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
+                { name: 'Joe Sola', url: 'http://www.joesola.info/', photo: 'images/artists/JoeSola.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
+                { name: 'Scott Stark', url: 'http://www.scottstark.com/', photo: 'images/artists/ScottStark.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'}
+              ]
+  },
+
+  methods: {
+    debug: function() {
+
+    }
+  }
+
+});
+
+</script>
