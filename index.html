@@ -40,23 +40,10 @@
         <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
-
-              <!-- TODO: Rework (delete?) hamburger menu -->
-
-              <!-- hamburger menu -->
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-hamburger-collapse-content" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>
-
-            <div class="collapse navbar-collapse" id="nav-hamburger-collapse-content">
-              <ul class="nav navbar-nav">
-                <li><a href="#about">About</a></li>
-                <li><a href="#artists">Artists</a></li>
-                <li><a href="#location">Location</a></li>
+              <ul class="row nav navbar-nav">
+                <li class="col-xs-4"><a href="#about">About</a></li>
+                <li class="col-xs-4"><a href="#artists">Artists</a></li>
+                <li class="col-xs-4"><a href="#location">Location</a></li>
               </ul>
             </div>
           </div>
@@ -75,13 +62,9 @@
             <p>The UK Art Museum is pleased to announce <strong><em>Videos for a Stadium</em></strong>, a presentation of sports-related videos by a range of nationally known artists, screened at <strong><em>Commonwealth Stadium on Thursday, April 6, from 7-9 pm.</em></strong></p>
             <p>This unique ‘art meets sports” event explores competition, skill, endurance, teamwork, and body movement. The national anthem, the green grass of various fields, and sports language are also examined. The videos will be presented on the stadium’s high resolution screen and viewed from field level seats in the end zone.</p>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6 center-text">
             <p id="tickets">Tickets are $15 for general public and $10 for Museum members. Funds raised at this event will go to support the Museum’s FREE Admission policy.</p>
-            <button>BUY TICKETS</button>
-            <h2>Sponsors</h2>
-            <span><img id="moontower" src="images/moontower.png"></span>
-            <span><img id="creativelex" src="images/creativelexington.png"></span>
-
+            <button id="buy-tickets">BUY TICKETS</button>
           </div>
         </div>
 
@@ -128,6 +111,18 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam. Phasellus nec ligula facilisis.</p>
         </div>
       </div>
+      <hr>
+      <div class="row about center-text">
+        <h2>Thank you to our Sponsors:</h2>
+        <div class="sponsors">
+          <span><img id="moontower" src="images/moontower.png"></span>
+          <span><img id="creativelex" src="images/creativelexington.png"></span>
+        </div>
+      </div>
+
+    </div>
+    <div id="footer">
+      © stadiumsite5 inc. 2017
     </div>
   </div>
   <script async defer
