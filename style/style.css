@@ -27,6 +27,8 @@ body {
 	margin-bottom: 10px;
 }
 
+/* floating effect on hover from here */
+/* http://tobiasahlin.com/blog/how-to-animate-box-shadow/ */
 .vfas-thumbnail {
   position: relative;
   border-radius: 10px;
