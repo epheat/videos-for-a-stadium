@@ -27,18 +27,30 @@ body {
 	margin-bottom: 10px;
 }
 
-.row {
-	border-radius: 10px;
-	border-style: none;
-	opacity: 1;
-	-webkit-transition-duration: opacity 1.5s;
-	/* Safari */
-	transition-duration: opacity 1.5s;
+.vfas-thumbnail {
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  transition: all 0.3s ease-in-out;
 }
-
-.thumbnail:hover {
-	opacity: 0.6;
-
+.vfas-thumbnail::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+  transition: opacity 0.3s ease-in-out;
+}
+.vfas-thumbnail:hover {
+  transform: scale(1.1, 1.1);
+}
+.vfas-thumbnail:hover::after {
+  opacity: 1;
 }
 
 h2 {
@@ -61,10 +73,6 @@ h2 {
 	padding: 10px;
 }
 
-button {
-	color: black;
-}
-
 .location {
 	margin-bottom: 20px;
 }
@@ -81,9 +89,9 @@ button {
   padding-left: 12px;
   padding-right: 12px;
   background-color: #9CB3BF;
-  -webkit-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.3s;
   /* Safari */
-  transition-duration: 0.4s;
+  transition-duration: 0.3s;
   border-style: none;
 }
 
@@ -91,6 +99,7 @@ button:hover, button:active, button:link {
     color: white;
     text-decoration: none;
     font-style: none;
+    /* red color when hovered */
     background-color: #831800;
 }
 
