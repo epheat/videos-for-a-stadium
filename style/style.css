@@ -1,7 +1,7 @@
 body {
 	font-family: 'Montserrat', sans-serif;
 	overflow-x: hidden;
-	background-color: #fff;
+  background-color: #628CA1;
 	color: white;
 }
 
@@ -21,7 +21,6 @@ body {
 	padding-top: 50px;
 	margin-top: -50px;
 	background-color: #628CA1;
-	box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
 .artist-name {
@@ -64,7 +63,7 @@ body {
 
 .sponsors {
 	width: 100%;
-	margin-bottom: 120px;
+	margin-bottom: 50px;
 }
 #moontower {
 	width: 230px;
@@ -130,15 +129,11 @@ body {
   width: 100%;
   padding: 0px;
   height: 50px;
-  opacity: 0.85;
 }
 
 #footer {
-	text-align: center;
-	padding-top: 10px;
-	margin: -80px 0px;
-	opacity: 0.7;
-	width: 100%;
-	height: 50px;
+  padding-bottom: 20px;
+  text-align:center;
+  padding-top:20px;
 	background-color: #ddd;
 }
