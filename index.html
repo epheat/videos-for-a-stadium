@@ -30,25 +30,26 @@
 
 </head>
 <body>
-  <div class="container">
-    <div class="jumbotron titlebar">
+  <div id="vfas">
+    <div class="titlebar" :class="title_class">
       <h1>Videos for a Stadium</h1>
     </div>
 
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
+    <div class="nav-container" :class="nav_class">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
 
-          <!-- TODO: Rework (delete?) hamburger menu -->
+            <!-- TODO: Rework (delete?) hamburger menu -->
 
-          <!-- hamburger menu -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-hamburger-collapse-content" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
+            <!-- hamburger menu -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-hamburger-collapse-content" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
 
         <div class="collapse navbar-collapse" id="nav-hamburger-collapse-content">
           <ul class="nav navbar-nav">
@@ -77,21 +78,22 @@
             <h2>Sponsors</h2>
             <span><img id="moontower" src="images/moontower.png"></span>
             <span><img id="creativelex" src="images/creativelexington.png"></span>
+
           </div>
         </div>
-      </div>
 
-      <div id="artists">
-        <div class="page-header">
-          <h1>Artists</h1>
-        </div>
-        <div class="row artists">
-          <div class="row">
-            <!-- If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line. -->
-            <div v-for="artist in artists" class="col-xs-6 col-sm-4 col-md-3">
-              <h4 class="artist-name">{{ artist.name }}</h4>
-              <a v-bind:href="artist.url" class="thumbnail"><img v-bind:src="artist.photo" alt="..."></a>
-              <p>{{ artist.bio }}</p>
+        <div id="artists">
+          <div class="page-header">
+            <h1>Artists</h1>
+          </div>
+          <div class="row artists">
+            <div class="row">
+              <!-- If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line. -->
+              <div v-for="artist in artists" class="col-xs-6 col-sm-4 col-md-3">
+                <h4 class="artist-name">{{ artist.name }}</h4>
+                <a v-bind:href="artist.url" class="thumbnail"><img v-bind:src="artist.photo" alt="..."></a>
+                <p>{{ artist.bio }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -130,15 +132,18 @@
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCH_-15ZQKf-zLmFyQSMIwhInKOiDKCzFQ
 &callback=initMap">
-  </script>
-</body>
-</html>
+ </script>
+      
+  </body>
+  </html>
 
 <script>
 
 new Vue({
-  el: '#artists',
+  el: '#vfas',
   data: {
+
+    scroll_position: 0,
 
     artists:  [ { name: 'Paul S. Benjamin', url: 'http://www.paulsbenjamin.com/', photo: 'images/artists/PaulSBenjamin.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
                 { name: 'Janet Biggs', url: 'http://jbiggs.com/', photo: 'images/artists/JanetBiggs.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
@@ -155,10 +160,38 @@ new Vue({
   },
 
   methods: {
-    debug: function() {
-
+    onScroll() {
+      this.scroll_position = window.scrollY;
     }
+  },
+
+  computed: {
+    nav_stuck: function() {
+      if (this.scroll_position > 240) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    nav_class: function() {
+      if (this.nav_stuck) {
+        return 'nav-stuck';
+      }
+    },
+    title_class: function() {
+      if (this.nav_stuck) {
+        return 'compensate-for-nav-stuck';
+      }
+    }
+  },
+
+  mounted() {
+    window.addEventListener('scroll', this.onScroll);
+  },
+  destroy() {
+    window.removeEventListener('scroll', this.onScroll);
   }
+
 
 });
 

@@ -6,7 +6,15 @@ body {
 }
 
 .titlebar {
+  display: inline-block;
+  width: 100%;
+  height: 240px;
+  background-color: #ddd;
   text-align: center;
+}
+
+.compensate-for-nav-stuck {
+  margin-bottom: 50px;
 }
 
 .artist-name {
@@ -86,3 +94,15 @@ button:hover, button:active, button:link {
     background-color: #831800;
 }
 
+.nav-stuck {
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+}
+
+.nav-container {
+  width: 100%;
+  padding: 0px;
+  height: 50px;
+  opacity: 0.85;
+}
