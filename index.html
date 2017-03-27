@@ -90,13 +90,11 @@
             <h1>Artists</h1>
           </div>
           <div class="row artists">
-            <div class="row">
-              <!-- If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line. -->
-              <div v-for="artist in artists" class="col-xs-6 col-sm-4 col-md-3">
-                <h4 class="artist-name">{{ artist.name }}</h4>
-                <a v-bind:href="artist.url" class="thumbnail"><img v-bind:src="artist.photo" alt="..."></a>
-                <p>{{ artist.bio }}</p>
-              </div>
+            <!-- If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line. -->
+            <div v-for="artist in artists" class="col-xs-6 col-sm-4 col-md-3">
+              <h4 class="artist-name">{{ artist.name }}</h4>
+              <a v-bind:href="artist.url" class="thumbnail"><img v-bind:src="artist.photo" alt="..."></a>
+              <p>{{ artist.bio }}</p>
             </div>
           </div>
         </div>
