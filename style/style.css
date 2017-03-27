@@ -33,7 +33,7 @@ body {
   position: relative;
   border-radius: 10px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .vfas-thumbnail::after {
   content: '';
@@ -46,7 +46,7 @@ body {
   height: 100%;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.8);
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 .vfas-thumbnail:hover {
   transform: scale(1.1, 1.1);
@@ -72,6 +72,7 @@ h2 {
 
 #tickets {
 	border: .5em solid #9CB3BF;
+  font-size: 1.4em;
 	padding: 10px;
 }
 
