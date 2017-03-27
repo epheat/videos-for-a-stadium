@@ -1,7 +1,28 @@
 .titlebar {
+  display: inline-block;
+  width: 100%;
+  height: 240px;
+  background-color: #ddd;
   text-align: center;
+}
+
+.compensate-for-nav-stuck {
+  margin-bottom: 50px;
 }
 
 .artist-name {
   text-align: center;
+}
+
+.nav-stuck {
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+}
+
+.nav-container {
+  width: 100%;
+  padding: 0px;
+  height: 50px;
+  opacity: 0.85;
 }
