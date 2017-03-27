@@ -1,3 +1,10 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	overflow-x: hidden;
+	background-color: #628CA1;
+	color: white;
+}
+
 .titlebar {
   text-align: center;
 }
@@ -5,3 +12,77 @@
 .artist-name {
   text-align: center;
 }
+
+#map {
+	height: 300px;
+	width: 350px;
+	margin-bottom: 10px;
+}
+
+.row {
+	border-radius: 10px;
+	border-style: none;
+	opacity: 1;
+	-webkit-transition-duration: opacity 1.5s;
+	/* Safari */
+	transition-duration: opacity 1.5s;
+}
+
+.thumbnail:hover {
+	opacity: 0.6;
+
+}
+
+h2 {
+	text-align: left;
+}
+
+#moontower {
+	width: 230px;
+	height: auto;
+}
+
+#creativelex {
+	margin-left: 5%;
+	width: 90px;
+	height: auto;
+}
+
+#tickets {
+	border: .5em solid #9CB3BF;
+	padding: 10px;
+}
+
+button {
+	color: black;
+}
+
+.location {
+	margin-bottom: 20px;
+}
+
+#parking {
+	height: 305px;
+	margin-bottom:10px;
+}
+
+button {
+  color: white;
+  padding-top: 7px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: #9CB3BF;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  border-style: none;
+}
+
+button:hover, button:active, button:link {
+    color: white;
+    text-decoration: none;
+    font-style: none;
+    background-color: #831800;
+}
+
