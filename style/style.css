@@ -26,6 +26,10 @@ body {
 .artist-name {
   text-align: center;
 }
+.bio {
+	height: 140px;
+	font-size: 0.8em;
+}
 
 #map {
 	height: 300px;

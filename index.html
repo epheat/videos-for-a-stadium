@@ -75,9 +75,9 @@
           <div class="row artists">
             <!-- If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line. -->
             <div v-for="artist in artists" class="col-xs-6 col-sm-4 col-md-3">
-              <h4 class="artist-name">{{ artist.name }}</h4>
+              <h5 class="artist-name">{{ artist.name }}</h5>
               <a v-bind:href="artist.url" class="thumbnail vfas-thumbnail"><img v-bind:src="artist.photo" alt="..."></a>
-              <p>{{ artist.bio }}</p>
+              <p class="bio">{{ artist.bio }}</p>
             </div>
           </div>
         </div>
@@ -141,17 +141,17 @@ var vm_artists = new Vue({
   data: {
 
     // changes to this array will be reflected in the page
-    artists:  [ { name: 'Paul S. Benjamin', url: 'http://www.paulsbenjamin.com/', photo: 'images/artists/PaulSBenjamin.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
-                { name: 'Janet Biggs', url: 'http://jbiggs.com/', photo: 'images/artists/JanetBiggs.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
-                { name: 'Victoria Fu', url: 'http://www.victoriafu.com/', photo: 'images/artists/VictoriaFu.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
-                { name: 'Brett Kashmere', url: 'http://www.brettkashmere.com/', photo: 'images/artists/BrettKashmere.png', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
-                { name: 'Anya Liftig', url: 'http://www.anyaliftig.com/', photo: 'images/artists/AnyaLiftig.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
-                { name: 'Lilly McElroy', url: 'http://lillymcelroy.com/home.html', photo: 'images/artists/LillyMcElroy.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
-                { name: 'Didier Morelli', url: 'http://www.didiermorelli.com/', photo: 'images/artists/DidierMorelli.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
-                { name: 'Michael Murphy', url: 'http://michaeldavidmurphy.com/', photo: 'images/artists/MichaelDavidMurphy.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
-                { name: 'Alix Pearlstein', url: 'http://www.alixpearlstein.com/', photo: 'images/artists/AlixPearlstein.png', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
-                { name: 'Joe Sola', url: 'http://www.joesola.info/', photo: 'images/artists/JoeSola.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'},
-                { name: 'Scott Stark', url: 'http://www.scottstark.com/', photo: 'images/artists/ScottStark.jpg', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit neque, convallis vitae vestibulum sit amet, laoreet ac diam.'}
+    artists:  [ { name: 'Paul S. Benjamin', url: 'http://www.paulsbenjamin.com/', photo: 'images/artists/PaulSBenjamin.jpg',        bio: 'Paul Stephen Benjamin received his BA from the University of Illinois at Urbana-Champaign and his MFA from Georgia State University.                                                                      '},
+                { name: 'Janet Biggs', url: 'http://jbiggs.com/', photo: 'images/artists/JanetBiggs.jpg',                           bio: 'Janet Biggs is an American artist. She lives and works in Brooklyn, New York. Bigg\'s work often includes images of individuals in extreme landscapes or situations.                                      '},
+                { name: 'Victoria Fu', url: 'http://www.victoriafu.com/', photo: 'images/artists/VictoriaFu.jpg',                   bio: 'Victoria Fu is a visual artist who received her MFA from CalArts, and her MA in Art History/Museum Studies from University of Southern California. Fu lives and works in Los Angeles.                     '},
+                { name: 'Brett Kashmere', url: 'http://www.brettkashmere.com/', photo: 'images/artists/BrettKashmere.png',          bio: 'Brett Kashmere is a Canadian filmmaker living in Oakland, USA. Kashmere explores the combination of archival research with materialist aesthetics and hybrid forms.                                       '},
+                { name: 'Anya Liftig', url: 'http://www.anyaliftig.com/', photo: 'images/artists/AnyaLiftig.jpg',                   bio: 'Anya Liftig received her Bachelor of Arts in English in 1999 from Yale University. Anya\'s work focuses on the body and its relationship to other bodies, other people, and the built environment.        '},
+                { name: 'Lilly McElroy', url: 'http://lillymcelroy.com/home.html', photo: 'images/artists/LillyMcElroy.jpg',        bio: 'From Willcox, Arizonia, Lilly McElroy is an American photographer. Her best known effort is "I Throw Myself At Men", which involved photographs of her as she literally threw herself at men.             '},
+                { name: 'Didier Morelli', url: 'http://www.didiermorelli.com/', photo: 'images/artists/DidierMorelli.jpg',          bio: 'Didier Morelli was born in Montreal and currently lives in Chicago.  He is an interdisciplinary artist who combines practice and research in both his academic and performative explorations.             '},
+                { name: 'Michael Murphy', url: 'http://michaeldavidmurphy.com/', photo: 'images/artists/MichaelDavidMurphy.jpg',    bio: 'With an MFA in English, Murphy fell into photography as he believes it is a poetic process. He is the Program Manager for the annual six-week-long festival, Atlanta Celebrates Photography.              '},
+                { name: 'Alix Pearlstein', url: 'http://www.alixpearlstein.com/', photo: 'images/artists/AlixPearlstein.png',       bio: 'Alix Pearlstein was born in New York City, New York. Pearlstein creates work that can oftentimes combine elements of performance, video art, sculpture and conceptual art.                                '},
+                { name: 'Joe Sola', url: 'http://www.joesola.info/', photo: 'images/artists/JoeSola.jpg',                           bio: 'Joe Sola’s heavily conceptual practice is concerned with the role of the artist as participant and recorder of political and cultural events. He creates humorous critiques of the contemporary art world.'},
+                { name: 'Scott Stark', url: 'http://www.scottstark.com/', photo: 'images/artists/ScottStark.jpg',                   bio: 'Currently living in Austin, TX, Scott is a computer programmer and support specialist for a large multi-national corporation.  He has created a number of gallery installations using film and video.     '}
               ]
   }
 });
