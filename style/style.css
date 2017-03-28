@@ -6,11 +6,29 @@ body {
 }
 
 .titlebar {
-  display: inline-block;
+	position: relative;
   width: 100%;
-  height: 240px;
-  background-color: #ddd;
-  text-align: center;
+  height: 250px;
+	overflow-y: hidden;
+}
+
+#stadium {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	top: -40px;
+
+	min-height: 290px;
+}
+
+#title {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	font-size: 4em;
+	font-weight: bold;
+	top: 20px;
+	z-index: 100;
 }
 
 .compensate-for-nav-stuck {
@@ -100,9 +118,11 @@ body {
 }
 
 #buy-tickets {
+	display: inline-block;
 	width: 180px;
 	height: 60px;
 	margin: 0 auto;
+	padding-top: 20px;
   color: white;
   background-color: #9CB3BF;
   -webkit-transition-duration: 0.3s;
@@ -111,7 +131,7 @@ body {
   border-style: none;
 }
 
-#buy-tickets:hover, #buy-tickets:active, #buy-tickets:link {
+#buy-tickets:hover {
     color: white;
     text-decoration: none;
     font-style: none;
