@@ -1,7 +1,7 @@
 body {
 	font-family: 'Montserrat', sans-serif;
 	overflow-x: hidden;
-  background-color: #628CA1;
+  background-color: #63656a;
 	color: white;
 }
 
@@ -37,7 +37,7 @@ body {
 .page-body {
 	padding-top: 50px;
 	margin-top: -50px;
-	background-color: #628CA1;
+	background-color: #63656a;
 }
 
 .artist-name {
@@ -50,7 +50,7 @@ body {
 
 #map {
 	height: 300px;
-	width: 350px;
+	width: 100%;
 	margin-bottom: 10px;
 }
 
@@ -98,7 +98,8 @@ body {
 }
 
 #tickets {
-	border: .5em solid #9CB3BF;
+	background-color: #202c5f;
+	border: .5em solid #202c5f;
   font-size: 1.4em;
 	padding: 10px;
 }
@@ -123,7 +124,7 @@ body {
 	margin: 0 auto;
 	padding-top: 20px;
   color: white;
-  background-color: #9CB3BF;
+  background-color: #c8c8c7;
   -webkit-transition-duration: 0.3s;
   /* Safari */
   transition-duration: 0.3s;
@@ -131,11 +132,11 @@ body {
 }
 
 #buy-tickets:hover {
-    color: white;
+    color: #202c5f;
     text-decoration: none;
     font-style: none;
     /* red color when hovered */
-    background-color: #831800;
+    background-color: white;
 }
 
 .nav li {
